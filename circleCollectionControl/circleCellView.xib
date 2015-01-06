@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="w7U-dg-bPL" customClass="circleCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="105" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="105" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p26-bi-cIo">
+                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SHj-08-33P">
+                                <rect key="frame" x="2" y="2" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="e9i-70-PzD"/>
+                                    <constraint firstAttribute="height" constant="100" id="k82-Ox-z24"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SHj-08-33P" secondAttribute="centerX" id="Kzr-sB-otP"/>
+                            <constraint firstAttribute="centerY" secondItem="SHj-08-33P" secondAttribute="centerY" id="WRf-vj-k1d"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz9-6C-4ev">
+                        <rect key="frame" x="0.0" y="105" width="105" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="to9-F1-pP6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="p26-bi-cIo" firstAttribute="leading" secondItem="w7U-dg-bPL" secondAttribute="leading" id="Fsx-lK-aMV"/>
+                <constraint firstItem="Uz9-6C-4ev" firstAttribute="top" secondItem="p26-bi-cIo" secondAttribute="bottom" id="GQd-6s-mgp"/>
+                <constraint firstAttribute="trailing" secondItem="Uz9-6C-4ev" secondAttribute="trailing" id="KTU-1B-1Gg"/>
+                <constraint firstItem="p26-bi-cIo" firstAttribute="top" secondItem="w7U-dg-bPL" secondAttribute="top" id="Nu0-3Q-eHG"/>
+                <constraint firstItem="Uz9-6C-4ev" firstAttribute="leading" secondItem="w7U-dg-bPL" secondAttribute="leading" id="Rl1-py-PQT"/>
+                <constraint firstAttribute="trailing" secondItem="p26-bi-cIo" secondAttribute="trailing" id="WZU-U7-QJW"/>
+                <constraint firstAttribute="bottom" secondItem="Uz9-6C-4ev" secondAttribute="bottom" id="buU-Ky-IgS"/>
+                <constraint firstAttribute="centerX" secondItem="p26-bi-cIo" secondAttribute="centerX" id="c8x-sO-k4j"/>
+            </constraints>
+        </collectionViewCell>
+    </objects>
+</document>

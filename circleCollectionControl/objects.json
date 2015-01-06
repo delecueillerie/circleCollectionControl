@@ -1,0 +1,62 @@
+[
+ {
+ "name": "Anchor",
+ "picture": "Anchor",
+ "color": [188,187,187]
+ },
+ {
+ "name": "Bike",
+ "picture": "Bike",
+ "color": [132,75,71]
+ },
+ {
+ "name": "Cherries",
+ "picture": "Cherries",
+ "color": [186,7,69]
+ },
+ {
+ "name": "Compass",
+ "picture": "Compass",
+ "color": [214,159,70]
+ },
+ {
+ "name": "Crown",
+ "picture": "Crown",
+ "color": [229,205,85]
+ },
+ {
+ "name": "Globe",
+ "picture": "Globe",
+ "color": [29,120,166]
+ },
+ {
+ "name": "Headphones",
+ "picture": "Headphones",
+ "color": [201,200,200]
+ },
+ {
+ "name": "Lightbulb",
+ "picture": "Lightbulb",
+ "color": [254,254,200]
+ },
+ {
+ "name": "Pencil",
+ "picture": "Pencil",
+ "color": [229,205,85]
+ },
+ {
+ "name": "Plane",
+ "picture": "Plane",
+ "color": [149,23,30]
+ },
+ {
+ "name": "Watch",
+ "picture": "Watch",
+ "color": [94,134,155]
+ },
+ {
+ "name": "Yacht",
+ "picture": "Yacht",
+ "color": [240,236,208]
+ }
+ ]

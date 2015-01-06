@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		096034E01A57EC26007DE586 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 096034DF1A57EC26007DE586 /* objects.json */; };
+		096034E21A57FF31007DE586 /* circleCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034E11A57FF31007DE586 /* circleCellView.xib */; };
+		096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */; };
 		09F439BA1A570453005D8C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439B91A570453005D8C4D /* main.m */; };
 		09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439BC1A570453005D8C4D /* AppDelegate.m */; };
 		09F439C01A570453005D8C4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439BF1A570453005D8C4D /* ViewController.m */; };
-		09F439C31A570453005D8C4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C11A570453005D8C4D /* Main.storyboard */; };
+		09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C11A570453005D8C4D /* circleCollectionControl.storyboard */; };
 		09F439C51A570453005D8C4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C41A570453005D8C4D /* Images.xcassets */; };
 		09F439C81A570453005D8C4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C61A570453005D8C4D /* LaunchScreen.xib */; };
 		09F439D41A570453005D8C4D /* circleCollectionControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439D31A570453005D8C4D /* circleCollectionControlTests.m */; };
+		09F439E11A5706E3005D8C4D /* circleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E01A5706E3005D8C4D /* circleCollectionView.m */; };
+		09F439E71A570969005D8C4D /* UIImage+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E61A570969005D8C4D /* UIImage+Extended.m */; };
+		09F439EA1A574C6D005D8C4D /* circleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E91A574C6D005D8C4D /* circleCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		096034DF1A57EC26007DE586 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
+		096034E11A57FF31007DE586 /* circleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleCellView.xib; sourceTree = "<group>"; };
+		096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionViewLayout.h; sourceTree = "<group>"; };
+		096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionViewLayout.m; sourceTree = "<group>"; };
 		09F439B41A570453005D8C4D /* circleCollectionControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = circleCollectionControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F439B81A570453005D8C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09F439B91A570453005D8C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -34,12 +44,18 @@
 		09F439BC1A570453005D8C4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		09F439BE1A570453005D8C4D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		09F439BF1A570453005D8C4D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		09F439C21A570453005D8C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09F439C21A570453005D8C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/circleCollectionControl.storyboard; sourceTree = "<group>"; };
 		09F439C41A570453005D8C4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09F439C71A570453005D8C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09F439CD1A570453005D8C4D /* circleCollectionControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circleCollectionControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F439D21A570453005D8C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09F439D31A570453005D8C4D /* circleCollectionControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = circleCollectionControlTests.m; sourceTree = "<group>"; };
+		09F439DF1A5706E3005D8C4D /* circleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionView.h; sourceTree = "<group>"; };
+		09F439E01A5706E3005D8C4D /* circleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionView.m; sourceTree = "<group>"; };
+		09F439E51A570969005D8C4D /* UIImage+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extended.h"; sourceTree = "<group>"; };
+		09F439E61A570969005D8C4D /* UIImage+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extended.m"; sourceTree = "<group>"; };
+		09F439E81A574C6D005D8C4D /* circleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionViewCell.h; sourceTree = "<group>"; };
+		09F439E91A574C6D005D8C4D /* circleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +97,8 @@
 		09F439B61A570453005D8C4D /* circleCollectionControl */ = {
 			isa = PBXGroup;
 			children = (
-				09F439BB1A570453005D8C4D /* AppDelegate.h */,
-				09F439BC1A570453005D8C4D /* AppDelegate.m */,
-				09F439BE1A570453005D8C4D /* ViewController.h */,
-				09F439BF1A570453005D8C4D /* ViewController.m */,
-				09F439C11A570453005D8C4D /* Main.storyboard */,
-				09F439C41A570453005D8C4D /* Images.xcassets */,
-				09F439C61A570453005D8C4D /* LaunchScreen.xib */,
-				09F439B71A570453005D8C4D /* Supporting Files */,
+				09F439DE1A5706BC005D8C4D /* Classes */,
+				09F439DD1A5704D8005D8C4D /* AppDemo */,
 			);
 			path = circleCollectionControl;
 			sourceTree = "<group>";
@@ -117,6 +127,38 @@
 				09F439D21A570453005D8C4D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09F439DD1A5704D8005D8C4D /* AppDemo */ = {
+			isa = PBXGroup;
+			children = (
+				09F439BB1A570453005D8C4D /* AppDelegate.h */,
+				09F439BC1A570453005D8C4D /* AppDelegate.m */,
+				09F439BE1A570453005D8C4D /* ViewController.h */,
+				09F439BF1A570453005D8C4D /* ViewController.m */,
+				09F439C11A570453005D8C4D /* circleCollectionControl.storyboard */,
+				09F439C41A570453005D8C4D /* Images.xcassets */,
+				096034DF1A57EC26007DE586 /* objects.json */,
+				09F439C61A570453005D8C4D /* LaunchScreen.xib */,
+				09F439B71A570453005D8C4D /* Supporting Files */,
+			);
+			name = AppDemo;
+			sourceTree = "<group>";
+		};
+		09F439DE1A5706BC005D8C4D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				09F439DF1A5706E3005D8C4D /* circleCollectionView.h */,
+				09F439E01A5706E3005D8C4D /* circleCollectionView.m */,
+				09F439E51A570969005D8C4D /* UIImage+Extended.h */,
+				09F439E61A570969005D8C4D /* UIImage+Extended.m */,
+				09F439E81A574C6D005D8C4D /* circleCollectionViewCell.h */,
+				09F439E91A574C6D005D8C4D /* circleCollectionViewCell.m */,
+				096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */,
+				096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */,
+				096034E11A57FF31007DE586 /* circleCellView.xib */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F439C31A570453005D8C4D /* Main.storyboard in Resources */,
+				096034E01A57EC26007DE586 /* objects.json in Resources */,
+				096034E21A57FF31007DE586 /* circleCellView.xib in Resources */,
+				09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */,
 				09F439C81A570453005D8C4D /* LaunchScreen.xib in Resources */,
 				09F439C51A570453005D8C4D /* Images.xcassets in Resources */,
 			);
@@ -221,7 +265,11 @@
 			files = (
 				09F439C01A570453005D8C4D /* ViewController.m in Sources */,
 				09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */,
+				09F439EA1A574C6D005D8C4D /* circleCollectionViewCell.m in Sources */,
+				09F439E11A5706E3005D8C4D /* circleCollectionView.m in Sources */,
+				09F439E71A570969005D8C4D /* UIImage+Extended.m in Sources */,
 				09F439BA1A570453005D8C4D /* main.m in Sources */,
+				096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,12 +292,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		09F439C11A570453005D8C4D /* Main.storyboard */ = {
+		09F439C11A570453005D8C4D /* circleCollectionControl.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				09F439C21A570453005D8C4D /* Base */,
 			);
-			name = Main.storyboard;
+			name = circleCollectionControl.storyboard;
 			sourceTree = "<group>";
 		};
 		09F439C61A570453005D8C4D /* LaunchScreen.xib */ = {
@@ -414,6 +462,7 @@
 				09F439D91A570453005D8C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09F439DA1A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControlTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +471,7 @@
 				09F439DC1A570453005D8C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
