@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "circleImageView.h"
 
 @interface circleCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UIView *borderView;
-
-
+@property (strong, nonatomic) NSString *textLabel;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSArray *borderRGBColor;
++(float) nativeRatioHeightWidth;
 @end

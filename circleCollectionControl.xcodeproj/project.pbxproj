@@ -10,6 +10,10 @@
 		096034E01A57EC26007DE586 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 096034DF1A57EC26007DE586 /* objects.json */; };
 		096034E21A57FF31007DE586 /* circleCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034E11A57FF31007DE586 /* circleCellView.xib */; };
 		096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */; };
+		096034EE1A5BE685007DE586 /* LICENCE.md in Sources */ = {isa = PBXBuildFile; fileRef = 096034EC1A5BE685007DE586 /* LICENCE.md */; };
+		096034EF1A5BE685007DE586 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 096034ED1A5BE685007DE586 /* README.md */; };
+		096034F11A5C8DCF007DE586 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034F01A5C8DCF007DE586 /* View.xib */; };
+		096034F61A5E95B7007DE586 /* circleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034F51A5E95B7007DE586 /* circleImageView.m */; };
 		09F439BA1A570453005D8C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439B91A570453005D8C4D /* main.m */; };
 		09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439BC1A570453005D8C4D /* AppDelegate.m */; };
 		09F439C01A570453005D8C4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439BF1A570453005D8C4D /* ViewController.m */; };
@@ -37,6 +41,11 @@
 		096034E11A57FF31007DE586 /* circleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleCellView.xib; sourceTree = "<group>"; };
 		096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionViewLayout.h; sourceTree = "<group>"; };
 		096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionViewLayout.m; sourceTree = "<group>"; };
+		096034EC1A5BE685007DE586 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = SOURCE_ROOT; };
+		096034ED1A5BE685007DE586 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		096034F01A5C8DCF007DE586 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		096034F41A5E95B7007DE586 /* circleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleImageView.h; sourceTree = "<group>"; };
+		096034F51A5E95B7007DE586 /* circleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleImageView.m; sourceTree = "<group>"; };
 		09F439B41A570453005D8C4D /* circleCollectionControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = circleCollectionControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F439B81A570453005D8C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09F439B91A570453005D8C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +106,8 @@
 		09F439B61A570453005D8C4D /* circleCollectionControl */ = {
 			isa = PBXGroup;
 			children = (
+				096034EC1A5BE685007DE586 /* LICENCE.md */,
+				096034ED1A5BE685007DE586 /* README.md */,
 				09F439DE1A5706BC005D8C4D /* Classes */,
 				09F439DD1A5704D8005D8C4D /* AppDemo */,
 			);
@@ -152,11 +163,14 @@
 				09F439E01A5706E3005D8C4D /* circleCollectionView.m */,
 				09F439E51A570969005D8C4D /* UIImage+Extended.h */,
 				09F439E61A570969005D8C4D /* UIImage+Extended.m */,
+				096034F41A5E95B7007DE586 /* circleImageView.h */,
+				096034F51A5E95B7007DE586 /* circleImageView.m */,
 				09F439E81A574C6D005D8C4D /* circleCollectionViewCell.h */,
 				09F439E91A574C6D005D8C4D /* circleCollectionViewCell.m */,
 				096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */,
 				096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */,
 				096034E11A57FF31007DE586 /* circleCellView.xib */,
+				096034F01A5C8DCF007DE586 /* View.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 				096034E21A57FF31007DE586 /* circleCellView.xib in Resources */,
 				09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */,
 				09F439C81A570453005D8C4D /* LaunchScreen.xib in Resources */,
+				096034F11A5C8DCF007DE586 /* View.xib in Resources */,
 				09F439C51A570453005D8C4D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,8 +282,11 @@
 				09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */,
 				09F439EA1A574C6D005D8C4D /* circleCollectionViewCell.m in Sources */,
 				09F439E11A5706E3005D8C4D /* circleCollectionView.m in Sources */,
+				096034EE1A5BE685007DE586 /* LICENCE.md in Sources */,
 				09F439E71A570969005D8C4D /* UIImage+Extended.m in Sources */,
+				096034EF1A5BE685007DE586 /* README.md in Sources */,
 				09F439BA1A570453005D8C4D /* main.m in Sources */,
+				096034F61A5E95B7007DE586 /* circleImageView.m in Sources */,
 				096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

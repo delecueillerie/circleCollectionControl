@@ -46,4 +46,31 @@
     return image;
 }
 
+
+- (UIImage *)rounded {
+    //resize image to small square
+    UIImage *roundedImage = [UIImage new];
+    float size = MIN(self.size.width, self.size.height);
+    UIImage *squareImage = [self squareImageScaledToSize:size];
+    
+    // Begin a new image that will be the new image with the rounded corners
+    // (here with the size of an UIImageView)
+    UIGraphicsBeginImageContextWithOptions(squareImage.size, NO, [UIScreen mainScreen].scale);
+    
+    // Add a clip before drawing anything, in the shape of an rounded rect
+    CGRect theRect = CGRectMake(0, 0, size, size);
+    [[UIBezierPath bezierPathWithRoundedRect:theRect
+                                cornerRadius:size/2] addClip];
+    // Draw your image
+    [self drawInRect:theRect];
+    
+    // Get the image, here setting the UIImageView image
+    roundedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // Lets forget about that we were drawing
+    UIGraphicsEndImageContext();
+    
+    return roundedImage;
+}
+
 @end

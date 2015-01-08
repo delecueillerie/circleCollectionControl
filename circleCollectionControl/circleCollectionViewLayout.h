@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol circleCollectionViewLayoutDelegate <NSObject>
+
+//- (float) cellRatioLengthWidth;
+
+@end
+
 
 @interface circleCollectionViewLayout : UICollectionViewFlowLayout
 
-
+@property (weak, nonatomic) id<circleCollectionViewLayoutDelegate> delegate;
 
 @end

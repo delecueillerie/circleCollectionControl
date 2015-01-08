@@ -16,12 +16,14 @@
 @property (nonatomic) UIEdgeInsets insets;
 
 
+//float cellRatioHeightWidth;
 
 @end
 
 @implementation circleCollectionViewLayout
 
-
+//#define ACTIVE_DISTANCE 200
+#define ZOOM_FACTOR 0.3
 -(instancetype) init {
     self = [super init];
     if (self) {
@@ -29,11 +31,8 @@
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         BOOL iPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-        self.itemSize = (CGSize){170, 200};
-        self.sectionInset = UIEdgeInsetsMake(iPad? 225 : 0, 35, iPad? 225 : 0, 35);
-        self.minimumLineSpacing = 30.0;
-        self.minimumInteritemSpacing = 200;
-        self.headerReferenceSize = iPad? (CGSize){50, 50} : (CGSize){43, 43};
+        //self.sectionInset = UIEdgeInsetsMake(iPad? 225 : 0, 35, iPad? 225 : 0, 35);
+        //self.headerReferenceSize = iPad? (CGSize){50, 50} : (CGSize){43, 43};
     }
     return self;
 }
@@ -41,6 +40,7 @@
 - (void)prepareLayout
 {
     [super prepareLayout];
+    //cellRatioHeightWidth = [self.delegate cellRatioLengthWidth];
     
 }
 
@@ -48,18 +48,32 @@
 
 - (void)setLineAttributes:(UICollectionViewLayoutAttributes *)attributes visibleRect:(CGRect)visibleRect
 {
-    CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
-    CGFloat normalizedDistance = distance / ACTIVE_DISTANCE;
-    if (ABS(distance) < ACTIVE_DISTANCE) {
-        CGFloat zoom = 1 + ZOOM_FACTOR*(1 - ABS(normalizedDistance));
+    
+    
+    //int activeDistance = floor(visibleRect.size.width*(5/30));
+    
+    CGFloat distance = (CGRectGetMidX(visibleRect) - attributes.center.x);
+    //CGFloat normalizedDistance = distance / activeDistance;
+    CGFloat normalizedDistance = ABS(distance) / (visibleRect.size.width/2.0);
+    NSLog(@"normalizedDistance %f ", normalizedDistance);
+    
+    //if (normalizedDistance < 5.0/30.0) {
+        CGFloat zoom = 1 + 0.3*(1-normalizedDistance);
+        
+        //1 + ZOOM_FACTOR*(1 - ABS(normalizedDistance));
         attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
-        attributes.zIndex = 1;
-    }
-    else
-    {
+      //  attributes.zIndex = 1;
+        //}
+    /*
+    else if (normalizedDistance < 11.0/30.0) {
         attributes.transform3D = CATransform3DIdentity;
         attributes.zIndex = 0;
-    }
+        }
+    else if (normalizedDistance < 15.0/30.0) {
+        CGFloat zoom = 1 - ZOOM_FACTOR*(1 - ABS(normalizedDistance));
+        attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
+        attributes.zIndex = 0;
+    }*/
 }
 
 #pragma mark - Scrolling Experie ce
@@ -111,7 +125,7 @@
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;
     visibleRect.size = self.collectionView.bounds.size;
-    NSLog(@"inRect call");
+
     for (UICollectionViewLayoutAttributes* attributes in array) {
         if (attributes.representedElementCategory == UICollectionElementCategoryCell)
         {
@@ -121,7 +135,7 @@
         }
         else if (attributes.representedElementCategory == UICollectionElementCategorySupplementaryView)
         {
-            [self setHeaderAttributes:attributes];
+            //[self setHeaderAttributes:attributes];
         }
     }
     return array;
@@ -138,79 +152,10 @@
     return attributes;
 }
 
-/*
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
-{
-    NSMutableArray *theLayoutAttributes = [[NSMutableArray alloc] init];
-    
-    float minX = CGRectGetMinX(rect);
-    float maxX = CGRectGetMaxX(rect);
-    
-    int firstIndex = floorf(minX / [self.dataSource cellSize].width);
-    int lastIndex = floorf(maxX / [self.dataSource cellSize].width);
-    int activeIndex = (int)(firstIndex + lastIndex)/2;
-    
-    int maxVisibleOnScreen = 5;
-    
-    int firstItem = fmax(0, activeIndex - (int)(maxVisibleOnScreen/2) );
-    int lastItem = fmin( [self.dataSource itemsNumber]-1 , activeIndex + (int)(maxVisibleOnScreen/2) );
-    
- 
-    
-    for( int i = firstItem; i <= lastItem; i++ ){
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-        UICollectionViewLayoutAttributes *theAttributes = [self layoutAttributesForItemAtIndexPath:indexPath];
-        [theLayoutAttributes addObject:theAttributes];
-    }
-    
-    
-    return [theLayoutAttributes copy];
-}
-*/
 
-/*
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    //double newIndex = (indexPath.item + self.offset);
-    
-    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    //[UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    
-    attributes.size = [self.dataSource cellSize];;
-    float scaleFactor;
-    float deltaX;
-    CGAffineTransform translationT;
-    //CGAffineTransform rotationT = CGAffineTransformMakeRotation(self.AngularSpacing* newIndex *M_PI/180);
-    
-
-    if( self.wheelType == WHEELALIGNMENTLEFT){
-        scaleFactor = fmax(0.6, 1 - fabs( newIndex *0.25));
-        deltaX = self.cellSize.width/2;
-        theAttributes.center = CGPointMake(-self.dialRadius + self.xOffset  , self.collectionView.bounds.size.height/2 + self.collectionView.contentOffset.y);
-        translationT =CGAffineTransformMakeTranslation(self.dialRadius + (deltaX*scaleFactor) , 0);
-    }else  {
-        scaleFactor = fmax(0.4, 1 - fabs( newIndex *0.50));
-        deltaX =  self.collectionView.bounds.size.width/2;
-        theAttributes.center = CGPointMake(-self.dialRadius + self.xOffset , self.collectionView.bounds.size.height/2 + self.collectionView.contentOffset.y);
-        translationT =CGAffineTransformMakeTranslation(self.dialRadius  + ((1 - scaleFactor) * -30) , 0);
-    }
-
-    
-    
-    //CGAffineTransform scaleT = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
-    //theAttributes.alpha = scaleFactor;
-    
-    //theAttributes.transform = CGAffineTransformConcat(scaleT, CGAffineTransformConcat(translationT, rotationT));
-    //theAttributes.zIndex = indexPath.item;
-    
-    return attributes;
-}
-*/
-
-/*
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
     return YES;
 }
-*/
+
 @end

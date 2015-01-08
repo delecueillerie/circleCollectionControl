@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Extended)
+- (UIImage *)squareImageScaledToSize:(CGFloat)newSize;
+- (UIImage *)rounded;
 
 @end

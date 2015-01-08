@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSArray *dataArray;
 
 
-@property (nonatomic) CGSize viewSize;
+//@property (nonatomic) CGSize viewSize;
 @end
 
 
@@ -42,15 +42,16 @@ static NSString *cellId = @"Cell";
 +(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data withFrame:(CGRect)frame {
     
     circleCollectionViewLayout *circleLayout = [[circleCollectionViewLayout alloc] init];
+
     circleCollectionView * collectionView = [[circleCollectionView alloc] initWithFrame:frame collectionViewLayout:circleLayout];
     collectionView.dataArray = data;
     
-    collectionView.backgroundColor = [UIColor grayColor];
+    collectionView.backgroundColor = [UIColor whiteColor];
     
     return collectionView;
 }
 
-- (instancetype) initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+- (instancetype) initWithFrame:(CGRect)frame collectionViewLayout:(circleCollectionViewLayout *)layout {
     
     self = [super initWithFrame:frame collectionViewLayout:layout];
     
@@ -59,31 +60,25 @@ static NSString *cellId = @"Cell";
         self.dataSource = self;
         [self registerNib:[UINib nibWithNibName:@"circleCellView" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellId];
 
+        
         //[self registerClass:[circleCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     }
     return self;
 }
 
 
-
 #pragma mark - CollectionView DataSource
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+-(circleCollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     circleCollectionViewCell *cell;
 
     cell = [cv dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     
     NSDictionary *item = [self.dataArray objectAtIndex:indexPath.item];
     
-    cell.label.text = [item valueForKey:@"name"];
-    cell.imageView.image = [UIImage imageNamed:[item valueForKey:@"picture"]];
-    cell.borderView.layer.borderWidth = 1;
-    
-    NSArray *RGBColor = [item valueForKey:@"color"];
-    cell.borderView.layer.borderColor = [[UIColor colorWithRed:[(NSNumber *)RGBColor[0] floatValue]
-                                                   green:[(NSNumber *)RGBColor[0] floatValue]
-                                                    blue:[(NSNumber *)RGBColor[0] floatValue]
-                                                   alpha:1.0] CGColor];
+    cell.textLabel = [item valueForKey:@"name"];
+    cell.image = [UIImage imageNamed:[item valueForKey:@"picture"]];
+    cell.borderRGBColor = [item valueForKey:@"color"];
     return cell;
 }
 
@@ -97,12 +92,24 @@ static NSString *cellId = @"Cell";
 #pragma mark - UIViewCollectionDelegateFlowLayout
 
 -(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize viewSize = self.bounds.size;
-    CGSize size = CGSizeMake(viewSize.width/5, viewSize.height);
-    NSLog(@"item Size W%f H%f",size.width,size.height);
+    CGSize size;
+    float viewWidth = self.bounds.size.width;
+    if (viewWidth == 0.0) {
+        size = CGSizeMake(10.0, 10.0);
+    } else {
+        float height = self.bounds.size.height*0.6;
+        float width = height/[self cellRatioLengthWidth];
+        size = CGSizeMake(width,height);
+        NSLog(@"item Size W%f H%f",size.width,size.height);
+    }
     return size;
 }
 
+
+#pragma mark - circleCollectionViewLayoutDelegate
+- (float) cellRatioLengthWidth {
+    return [circleCollectionViewCell nativeRatioHeightWidth];
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "circleCollectionViewLayout.h"
 
-@interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, circleCollectionViewLayoutDelegate>
 
 +(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *)data withFrame:(CGRect)frame;
 
