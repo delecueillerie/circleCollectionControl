@@ -11,6 +11,6 @@
 
 @interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, circleCollectionViewLayoutDelegate>
 
-+(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *)data withFrame:(CGRect)frame;
++(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data embeddedIn:(UIView *)viewContainer;
 
 @end

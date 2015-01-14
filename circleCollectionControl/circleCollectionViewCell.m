@@ -19,20 +19,7 @@
 @implementation circleCollectionViewCell
 
 #pragma mark - Accessors
--(void) setBounds:(CGRect)bounds {
-    [super setBounds:bounds];
-    //self.imageView.clipsToBounds = YES;
-    //self.imageView.layer.cornerRadius = self.imageView.bounds.size.width/2;
-    //self.imageView.layer.shadowOffset = CGSizeMake(0, 5);
-    //self.imageView.layer.shadowOpacity = 0.5;
-    //self.imageView.layer.borderWidth = 2;
-    /*self.imageView.layer.borderColor = [[UIColor colorWithRed:[(NSNumber *)self.RGBColor[0] floatValue]
-                                                        green:[(NSNumber *)self.RGBColor[1] floatValue]
-                                                         blue:[(NSNumber *)self.RGBColor[2] floatValue]
-                                                        alpha:1.0] CGColor];
-*/
-    
-}
+
 -(void) setTextLabel:(NSString *)textLabel {
     _textLabel = textLabel;
     self.label.text = _textLabel;
@@ -48,11 +35,7 @@
 -(instancetype) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        //self.contentMode = UIViewContentModeScaleAspectFit;
 
-
-        //self.translatesAutoresizingMaskIntoConstraints = NO;
-        
     }
     return self;
 }
@@ -72,7 +55,7 @@
     NSArray *viewArray = [[UINib nibWithNibName:@"circleCellView" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil];
     UIView *view = [viewArray firstObject];
     float ratio = view.bounds.size.height/view.bounds.size.width;
-    NSLog(@"cell ratio %f", ratio);
+    //NSLog(@"cell ratio %f", ratio);
     return (ratio);
 }
   

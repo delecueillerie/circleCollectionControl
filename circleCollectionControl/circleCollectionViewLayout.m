@@ -46,40 +46,18 @@
 
 #pragma mark - Attributes management
 
-- (void)setLineAttributes:(UICollectionViewLayoutAttributes *)attributes visibleRect:(CGRect)visibleRect
-{
+- (void)setLineAttributes:(UICollectionViewLayoutAttributes *)attributes visibleRect:(CGRect)visibleRect {
     
-    
-    //int activeDistance = floor(visibleRect.size.width*(5/30));
     
     CGFloat distance = (CGRectGetMidX(visibleRect) - attributes.center.x);
-    //CGFloat normalizedDistance = distance / activeDistance;
     CGFloat normalizedDistance = ABS(distance) / (visibleRect.size.width/2.0);
-    NSLog(@"normalizedDistance %f ", normalizedDistance);
-    
-    //if (normalizedDistance < 5.0/30.0) {
-        CGFloat zoom = 1 + 0.3*(1-normalizedDistance);
-        
-        //1 + ZOOM_FACTOR*(1 - ABS(normalizedDistance));
-        attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
-      //  attributes.zIndex = 1;
-        //}
-    /*
-    else if (normalizedDistance < 11.0/30.0) {
-        attributes.transform3D = CATransform3DIdentity;
-        attributes.zIndex = 0;
-        }
-    else if (normalizedDistance < 15.0/30.0) {
-        CGFloat zoom = 1 - ZOOM_FACTOR*(1 - ABS(normalizedDistance));
-        attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
-        attributes.zIndex = 0;
-    }*/
+    CGFloat zoom = 1 - 0.8*normalizedDistance;
+    attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
 }
 
 #pragma mark - Scrolling Experie ce
 
-- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
-{
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
     CGFloat offsetAdjustment = MAXFLOAT;
     CGFloat horizontalCenter = proposedContentOffset.x + (CGRectGetWidth(self.collectionView.bounds) / 2.0);
     
@@ -113,8 +91,6 @@
     float pageWidth = self.collectionView.frame.size.width;
     float pageHeight = self.collectionView.frame.size.height;
     CGSize contentSize = CGSizeMake(numberOfPages * pageWidth, pageHeight);
-    //NSLog(@"collectionView size W %f - H %f", pageWidth, pageHeight);
-    //NSLog(@"collectionView ContentSize %f - %f", contentSize.width, contentSize.height);
 
     return contentSize;
 }
@@ -125,7 +101,7 @@
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;
     visibleRect.size = self.collectionView.bounds.size;
-
+    //NSLog(@"Visible rect x%f y%f w%f h%f",visibleRect.origin.x,visibleRect.origin.y,visibleRect.size.width,visibleRect.size.height);
     for (UICollectionViewLayoutAttributes* attributes in array) {
         if (attributes.representedElementCategory == UICollectionElementCategoryCell)
         {

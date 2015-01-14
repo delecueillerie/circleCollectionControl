@@ -27,23 +27,47 @@ static NSString *cellId = @"Cell";
 
 #pragma mark - Accessors
 
--(void) setFrame:(CGRect)frame {
-    [super setFrame:frame];
-    NSLog(@"setFrame W%f H%f", frame.size.width ,frame.size.height);
-}
-
-
-
-
-
 
 
 #pragma mark - Initializer
-+(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data withFrame:(CGRect)frame {
++(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data embeddedIn:(UIView *)viewContainer {
     
     circleCollectionViewLayout *circleLayout = [[circleCollectionViewLayout alloc] init];
 
-    circleCollectionView * collectionView = [[circleCollectionView alloc] initWithFrame:frame collectionViewLayout:circleLayout];
+    circleCollectionView * collectionView = [[circleCollectionView alloc] initWithFrame:viewContainer.frame collectionViewLayout:circleLayout];
+
+    
+    [viewContainer addSubview:collectionView];
+    //layout constraint settings
+    collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [viewContainer addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:viewContainer
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0 constant:0.0]];
+    [viewContainer addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:viewContainer
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0 constant:0.0]];
+    [viewContainer addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:viewContainer
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0 constant:0.0]];
+    [viewContainer addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:viewContainer
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0 constant:0.0]];
+    
+    
+    
     collectionView.dataArray = data;
     
     collectionView.backgroundColor = [UIColor whiteColor];
@@ -59,9 +83,6 @@ static NSString *cellId = @"Cell";
         self.delegate = self;
         self.dataSource = self;
         [self registerNib:[UINib nibWithNibName:@"circleCellView" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellId];
-
-        
-        //[self registerClass:[circleCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     }
     return self;
 }
@@ -93,16 +114,22 @@ static NSString *cellId = @"Cell";
 
 -(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
+    
     float viewWidth = self.bounds.size.width;
     if (viewWidth == 0.0) {
         size = CGSizeMake(10.0, 10.0);
     } else {
-        float height = self.bounds.size.height*0.6;
+        float height = self.bounds.size.height*0.8;
         float width = height/[self cellRatioLengthWidth];
         size = CGSizeMake(width,height);
-        NSLog(@"item Size W%f H%f",size.width,size.height);
+        //NSLog(@"item Size W%f H%f",size.width,size.height);
     }
     return size;
+}
+
+-(CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 20.0f;
 }
 
 
