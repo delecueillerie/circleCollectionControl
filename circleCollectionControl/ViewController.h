@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "circleCollectionView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <circleCollectionViewDelegate>
 
 
 @end

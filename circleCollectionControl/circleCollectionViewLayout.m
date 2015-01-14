@@ -55,7 +55,7 @@
     attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
 }
 
-#pragma mark - Scrolling Experie ce
+#pragma mark - Scrolling Experience
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
     CGFloat offsetAdjustment = MAXFLOAT;
@@ -90,7 +90,7 @@
     // Set the size
     float pageWidth = self.collectionView.frame.size.width;
     float pageHeight = self.collectionView.frame.size.height;
-    CGSize contentSize = CGSizeMake(numberOfPages * pageWidth, pageHeight);
+    CGSize contentSize = CGSizeMake((numberOfPages +2)* pageWidth, pageHeight);
 
     return contentSize;
 }

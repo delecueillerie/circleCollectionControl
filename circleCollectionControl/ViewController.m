@@ -7,20 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "circleCollectionView.h"
-
-#import "circleCollectionViewCell.h"
-
-
-
-
-#import "UIImage+Extended.h"
+//#import "circleCollectionViewCell.h"
+//#import "UIImage+Extended.h"
 
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *items;
 
 @property (weak, nonatomic) IBOutlet UIView *collectionViewContainer;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (strong, nonatomic) circleCollectionView *collectionView;
 
 @end
@@ -41,18 +37,22 @@
     NSLog(@"JSON Serialization Error %@", [error description]);
     }
     
-    self.collectionView = [circleCollectionView newCircleCollectionViewWithData:self.items embeddedIn:self.collectionViewContainer];
-
+    self.collectionView = [circleCollectionView newCircleCollectionViewWithData:self.items embeddedIn:self.collectionViewContainer delegatedBy:self];
 }
 
 -(void) viewDidLayoutSubviews {
     NSLog(@"view frame %f %f %f %f", self.collectionView.frame.origin.x,self.collectionView.frame.origin.y,self.collectionView.frame.size.width,self.collectionView.frame.size.height);
-
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.imageView.image = [UIImage imageNamed:[[self.items objectAtIndex:indexPath.row] valueForKey:@"picture"]];
 }
 @end

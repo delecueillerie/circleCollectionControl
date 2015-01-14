@@ -30,7 +30,7 @@ static NSString *cellId = @"Cell";
 
 
 #pragma mark - Initializer
-+(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data embeddedIn:(UIView *)viewContainer {
++(circleCollectionView *) newCircleCollectionViewWithData:(NSArray *) data embeddedIn:(UIView *)viewContainer delegatedBy:(id)delegate {
     
     circleCollectionViewLayout *circleLayout = [[circleCollectionViewLayout alloc] init];
 
@@ -71,6 +71,7 @@ static NSString *cellId = @"Cell";
     collectionView.dataArray = data;
     
     collectionView.backgroundColor = [UIColor whiteColor];
+    collectionView.delegateCircleCollectionView = delegate;
     
     return collectionView;
 }
@@ -109,6 +110,24 @@ static NSString *cellId = @"Cell";
     
 }
 
+#pragma mark - UIViewCollectionViewDelegate
+
+
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    NSLog(@"item selected index %ld", (long)indexPath.row);
+    [self.delegateCircleCollectionView collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+}
+
+
+-(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    //locate the scrollview which is in the centre
+    CGPoint centerPoint = CGPointMake(self.frame.size.width / 2 + scrollView.contentOffset.x, self.frame.size.height /2 + scrollView.contentOffset.y);
+    NSIndexPath *indexPath = [self indexPathForItemAtPoint:centerPoint];
+    NSLog(@"indexpath row %ld",(long)indexPath.row);
+    [self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:indexPath];
+}
 
 #pragma mark - UIViewCollectionDelegateFlowLayout
 
@@ -125,6 +144,11 @@ static NSString *cellId = @"Cell";
         //NSLog(@"item Size W%f H%f",size.width,size.height);
     }
     return size;
+}
+
+-(UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    float inset = collectionView.bounds.size.width/2.0f;
+    return UIEdgeInsetsMake(0, inset, 0, inset);
 }
 
 -(CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
