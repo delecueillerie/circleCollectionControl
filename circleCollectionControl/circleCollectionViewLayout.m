@@ -15,33 +15,16 @@
 @property (nonatomic) NSInteger maxNumRows;
 @property (nonatomic) UIEdgeInsets insets;
 
-
-//float cellRatioHeightWidth;
-
 @end
 
 @implementation circleCollectionViewLayout
 
-//#define ACTIVE_DISTANCE 200
-#define ZOOM_FACTOR 0.3
 -(instancetype) init {
     self = [super init];
     if (self) {
-        //self.insets = UIEdgeInsetsMake(1.0, 1.0, 1.0, 1.0);
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
-        BOOL iPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-        //self.sectionInset = UIEdgeInsetsMake(iPad? 225 : 0, 35, iPad? 225 : 0, 35);
-        //self.headerReferenceSize = iPad? (CGSize){50, 50} : (CGSize){43, 43};
     }
     return self;
-}
-
-- (void)prepareLayout
-{
-    [super prepareLayout];
-    //cellRatioHeightWidth = [self.delegate cellRatioLengthWidth];
-    
 }
 
 #pragma mark - Attributes management
@@ -111,7 +94,7 @@
         }
         else if (attributes.representedElementCategory == UICollectionElementCategorySupplementaryView)
         {
-            //[self setHeaderAttributes:attributes];
+            //
         }
     }
     return array;

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09F439B31A570453005D8C4D"
-               BuildableName = "circleCollectionControlApp.app"
-               BlueprintName = "circleCollectionControlApp"
+               BlueprintIdentifier = "09D1EDA51A67FB6D009233F9"
+               BuildableName = "libcircleCollectionControlLib.a"
+               BlueprintName = "circleCollectionControlLib"
                ReferencedContainer = "container:circleCollectionControl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09F439CC1A570453005D8C4D"
-               BuildableName = "circleCollectionControlTests.xctest"
-               BlueprintName = "circleCollectionControlTests"
+               BlueprintIdentifier = "09D1EDAF1A67FB6D009233F9"
+               BuildableName = "circleCollectionControlLibTests.xctest"
+               BlueprintName = "circleCollectionControlLibTests"
                ReferencedContainer = "container:circleCollectionControl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09F439CC1A570453005D8C4D"
-               BuildableName = "circleCollectionControlTests.xctest"
-               BlueprintName = "circleCollectionControlTests"
+               BlueprintIdentifier = "09D1EDAF1A67FB6D009233F9"
+               BuildableName = "circleCollectionControlLibTests.xctest"
+               BlueprintName = "circleCollectionControlLibTests"
                ReferencedContainer = "container:circleCollectionControl.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "09F439B31A570453005D8C4D"
-            BuildableName = "circleCollectionControlApp.app"
-            BlueprintName = "circleCollectionControlApp"
+            BlueprintIdentifier = "09D1EDA51A67FB6D009233F9"
+            BuildableName = "libcircleCollectionControlLib.a"
+            BlueprintName = "circleCollectionControlLib"
             ReferencedContainer = "container:circleCollectionControl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +72,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "09F439B31A570453005D8C4D"
-            BuildableName = "circleCollectionControlApp.app"
-            BlueprintName = "circleCollectionControlApp"
+            BlueprintIdentifier = "09D1EDA51A67FB6D009233F9"
+            BuildableName = "libcircleCollectionControlLib.a"
+            BlueprintName = "circleCollectionControlLib"
             ReferencedContainer = "container:circleCollectionControl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +90,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "09F439B31A570453005D8C4D"
-            BuildableName = "circleCollectionControlApp.app"
-            BlueprintName = "circleCollectionControlApp"
+            BlueprintIdentifier = "09D1EDA51A67FB6D009233F9"
+            BuildableName = "libcircleCollectionControlLib.a"
+            BlueprintName = "circleCollectionControlLib"
             ReferencedContainer = "container:circleCollectionControl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

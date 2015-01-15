@@ -32,25 +32,6 @@
 
 #pragma mark - Initializer
 
--(instancetype) initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-
-    }
-    return self;
-}
-
--(void) willMoveToSuperview:(UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-    
-    if (newSuperview) {
-        
-        //self.imageView.layer.shadowPath = [[UIBezierPath bezierPathWithRect:CGRectInset(self.imageView.bounds,1,1)] CGPath];
-        
-    }
-    
-}
-
 +(float) nativeRatioHeightWidth {
     NSArray *viewArray = [[UINib nibWithNibName:@"circleCellView" bundle:[NSBundle mainBundle]] instantiateWithOwner:self options:nil];
     UIView *view = [viewArray firstObject];

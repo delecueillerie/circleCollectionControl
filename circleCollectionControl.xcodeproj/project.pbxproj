@@ -10,9 +10,6 @@
 		096034E01A57EC26007DE586 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 096034DF1A57EC26007DE586 /* objects.json */; };
 		096034E21A57FF31007DE586 /* circleCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034E11A57FF31007DE586 /* circleCellView.xib */; };
 		096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */; };
-		096034EE1A5BE685007DE586 /* LICENCE.md in Sources */ = {isa = PBXBuildFile; fileRef = 096034EC1A5BE685007DE586 /* LICENCE.md */; };
-		096034EF1A5BE685007DE586 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 096034ED1A5BE685007DE586 /* README.md */; };
-		096034F11A5C8DCF007DE586 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034F01A5C8DCF007DE586 /* View.xib */; };
 		096034F61A5E95B7007DE586 /* circleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034F51A5E95B7007DE586 /* circleImageView.m */; };
 		09F439BA1A570453005D8C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439B91A570453005D8C4D /* main.m */; };
 		09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439BC1A570453005D8C4D /* AppDelegate.m */; };
@@ -20,32 +17,31 @@
 		09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C11A570453005D8C4D /* circleCollectionControl.storyboard */; };
 		09F439C51A570453005D8C4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C41A570453005D8C4D /* Images.xcassets */; };
 		09F439C81A570453005D8C4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F439C61A570453005D8C4D /* LaunchScreen.xib */; };
-		09F439D41A570453005D8C4D /* circleCollectionControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439D31A570453005D8C4D /* circleCollectionControlTests.m */; };
 		09F439E11A5706E3005D8C4D /* circleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E01A5706E3005D8C4D /* circleCollectionView.m */; };
 		09F439E71A570969005D8C4D /* UIImage+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E61A570969005D8C4D /* UIImage+Extended.m */; };
 		09F439EA1A574C6D005D8C4D /* circleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F439E91A574C6D005D8C4D /* circleCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		09F439CE1A570453005D8C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09F439AC1A570452005D8C4D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 09F439B31A570453005D8C4D;
-			remoteInfo = circleCollectionControl;
+/* Begin PBXCopyFilesBuildPhase section */
+		09D1EDA41A67FB6D009233F9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		096034DF1A57EC26007DE586 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
 		096034E11A57FF31007DE586 /* circleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleCellView.xib; sourceTree = "<group>"; };
 		096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionViewLayout.h; sourceTree = "<group>"; };
 		096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionViewLayout.m; sourceTree = "<group>"; };
-		096034EC1A5BE685007DE586 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = SOURCE_ROOT; };
-		096034ED1A5BE685007DE586 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		096034F01A5C8DCF007DE586 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		096034F41A5E95B7007DE586 /* circleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleImageView.h; sourceTree = "<group>"; };
 		096034F51A5E95B7007DE586 /* circleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleImageView.m; sourceTree = "<group>"; };
+		09D1EDA61A67FB6D009233F9 /* libcircleCollectionControlLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcircleCollectionControlLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F439B41A570453005D8C4D /* circleCollectionControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = circleCollectionControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F439B81A570453005D8C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09F439B91A570453005D8C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,9 +52,6 @@
 		09F439C21A570453005D8C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/circleCollectionControl.storyboard; sourceTree = "<group>"; };
 		09F439C41A570453005D8C4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09F439C71A570453005D8C4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		09F439CD1A570453005D8C4D /* circleCollectionControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circleCollectionControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09F439D21A570453005D8C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09F439D31A570453005D8C4D /* circleCollectionControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = circleCollectionControlTests.m; sourceTree = "<group>"; };
 		09F439DF1A5706E3005D8C4D /* circleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionView.h; sourceTree = "<group>"; };
 		09F439E01A5706E3005D8C4D /* circleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleCollectionView.m; sourceTree = "<group>"; };
 		09F439E51A570969005D8C4D /* UIImage+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extended.h"; sourceTree = "<group>"; };
@@ -68,14 +61,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		09F439B11A570453005D8C4D /* Frameworks */ = {
+		09D1EDA31A67FB6D009233F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09F439CA1A570453005D8C4D /* Frameworks */ = {
+		09F439B11A570453005D8C4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				09F439B61A570453005D8C4D /* circleCollectionControl */,
-				09F439D01A570453005D8C4D /* circleCollectionControlTests */,
 				09F439B51A570453005D8C4D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				09F439B41A570453005D8C4D /* circleCollectionControl.app */,
-				09F439CD1A570453005D8C4D /* circleCollectionControlTests.xctest */,
+				09D1EDA61A67FB6D009233F9 /* libcircleCollectionControlLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,8 +98,6 @@
 		09F439B61A570453005D8C4D /* circleCollectionControl */ = {
 			isa = PBXGroup;
 			children = (
-				096034EC1A5BE685007DE586 /* LICENCE.md */,
-				096034ED1A5BE685007DE586 /* README.md */,
 				09F439DE1A5706BC005D8C4D /* Classes */,
 				09F439DD1A5704D8005D8C4D /* AppDemo */,
 			);
@@ -119,23 +109,6 @@
 			children = (
 				09F439B81A570453005D8C4D /* Info.plist */,
 				09F439B91A570453005D8C4D /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		09F439D01A570453005D8C4D /* circleCollectionControlTests */ = {
-			isa = PBXGroup;
-			children = (
-				09F439D31A570453005D8C4D /* circleCollectionControlTests.m */,
-				09F439D11A570453005D8C4D /* Supporting Files */,
-			);
-			path = circleCollectionControlTests;
-			sourceTree = "<group>";
-		};
-		09F439D11A570453005D8C4D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				09F439D21A570453005D8C4D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,7 +143,6 @@
 				096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */,
 				096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */,
 				096034E11A57FF31007DE586 /* circleCellView.xib */,
-				096034F01A5C8DCF007DE586 /* View.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -178,9 +150,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		09F439B31A570453005D8C4D /* circleCollectionControl */ = {
+		09D1EDA51A67FB6D009233F9 /* circleCollectionControlLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09F439D71A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControl" */;
+			buildConfigurationList = 09D1EDB71A67FB6D009233F9 /* Build configuration list for PBXNativeTarget "circleCollectionControlLib" */;
+			buildPhases = (
+				09D1EDA21A67FB6D009233F9 /* Sources */,
+				09D1EDA31A67FB6D009233F9 /* Frameworks */,
+				09D1EDA41A67FB6D009233F9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = circleCollectionControlLib;
+			productName = circleCollectionControlLib;
+			productReference = 09D1EDA61A67FB6D009233F9 /* libcircleCollectionControlLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		09F439B31A570453005D8C4D /* circleCollectionControlApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09F439D71A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControlApp" */;
 			buildPhases = (
 				09F439B01A570453005D8C4D /* Sources */,
 				09F439B11A570453005D8C4D /* Frameworks */,
@@ -190,28 +179,10 @@
 			);
 			dependencies = (
 			);
-			name = circleCollectionControl;
+			name = circleCollectionControlApp;
 			productName = circleCollectionControl;
 			productReference = 09F439B41A570453005D8C4D /* circleCollectionControl.app */;
 			productType = "com.apple.product-type.application";
-		};
-		09F439CC1A570453005D8C4D /* circleCollectionControlTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09F439DA1A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControlTests" */;
-			buildPhases = (
-				09F439C91A570453005D8C4D /* Sources */,
-				09F439CA1A570453005D8C4D /* Frameworks */,
-				09F439CB1A570453005D8C4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				09F439CF1A570453005D8C4D /* PBXTargetDependency */,
-			);
-			name = circleCollectionControlTests;
-			productName = circleCollectionControlTests;
-			productReference = 09F439CD1A570453005D8C4D /* circleCollectionControlTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -222,12 +193,11 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = lagspoon;
 				TargetAttributes = {
-					09F439B31A570453005D8C4D = {
+					09D1EDA51A67FB6D009233F9 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					09F439CC1A570453005D8C4D = {
+					09F439B31A570453005D8C4D = {
 						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 09F439B31A570453005D8C4D;
 					};
 				};
 			};
@@ -244,8 +214,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				09F439B31A570453005D8C4D /* circleCollectionControl */,
-				09F439CC1A570453005D8C4D /* circleCollectionControlTests */,
+				09F439B31A570453005D8C4D /* circleCollectionControlApp */,
+				09D1EDA51A67FB6D009233F9 /* circleCollectionControlLib */,
 			);
 		};
 /* End PBXProject section */
@@ -259,21 +229,20 @@
 				096034E21A57FF31007DE586 /* circleCellView.xib in Resources */,
 				09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */,
 				09F439C81A570453005D8C4D /* LaunchScreen.xib in Resources */,
-				096034F11A5C8DCF007DE586 /* View.xib in Resources */,
 				09F439C51A570453005D8C4D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09F439CB1A570453005D8C4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		09D1EDA21A67FB6D009233F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09F439B01A570453005D8C4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,32 +251,14 @@
 				09F439BD1A570453005D8C4D /* AppDelegate.m in Sources */,
 				09F439EA1A574C6D005D8C4D /* circleCollectionViewCell.m in Sources */,
 				09F439E11A5706E3005D8C4D /* circleCollectionView.m in Sources */,
-				096034EE1A5BE685007DE586 /* LICENCE.md in Sources */,
 				09F439E71A570969005D8C4D /* UIImage+Extended.m in Sources */,
-				096034EF1A5BE685007DE586 /* README.md in Sources */,
 				09F439BA1A570453005D8C4D /* main.m in Sources */,
 				096034F61A5E95B7007DE586 /* circleImageView.m in Sources */,
 				096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09F439C91A570453005D8C4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09F439D41A570453005D8C4D /* circleCollectionControlTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		09F439CF1A570453005D8C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 09F439B31A570453005D8C4D /* circleCollectionControl */;
-			targetProxy = 09F439CE1A570453005D8C4D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		09F439C11A570453005D8C4D /* circleCollectionControl.storyboard */ = {
@@ -329,6 +280,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		09D1EDB81A67FB6D009233F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		09D1EDB91A67FB6D009233F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		09F439D51A570453005D8C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,7 +384,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = circleCollectionControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -421,49 +396,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = circleCollectionControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		09F439DB1A570453005D8C4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = circleCollectionControlTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleCollectionControl.app/circleCollectionControl";
-			};
-			name = Debug;
-		};
-		09F439DC1A570453005D8C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = circleCollectionControlTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleCollectionControl.app/circleCollectionControl";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		09D1EDB71A67FB6D009233F9 /* Build configuration list for PBXNativeTarget "circleCollectionControlLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D1EDB81A67FB6D009233F9 /* Debug */,
+				09D1EDB91A67FB6D009233F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		09F439AF1A570452005D8C4D /* Build configuration list for PBXProject "circleCollectionControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -473,20 +424,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09F439D71A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControl" */ = {
+		09F439D71A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControlApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09F439D81A570453005D8C4D /* Debug */,
 				09F439D91A570453005D8C4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		09F439DA1A570453005D8C4D /* Build configuration list for PBXNativeTarget "circleCollectionControlTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				09F439DB1A570453005D8C4D /* Debug */,
-				09F439DC1A570453005D8C4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

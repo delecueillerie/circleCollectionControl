@@ -49,7 +49,7 @@
 
 - (UIImage *)rounded {
     //resize image to small square
-    UIImage *roundedImage = [UIImage new];
+    UIImage *roundedImage;
     float size = MIN(self.size.width, self.size.height);
     UIImage *squareImage = [self squareImageScaledToSize:size];
     
