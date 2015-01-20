@@ -142,6 +142,8 @@ static NSString *cellId = @"Cell";
              nextIP = [NSIndexPath indexPathForItem:([self.items count]-1) inSection:0];
         }
         [self selectItemAtIndexPath:nextIP animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        [self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:nextIP];
+
     }
 
 }
@@ -153,8 +155,14 @@ static NSString *cellId = @"Cell";
         
     }
     else if (sender.state == UIGestureRecognizerStateBegan){
+
+        circleCollectionViewCell *cell = (circleCollectionViewCell *)sender.view;
+        NSIndexPath *IP = [self indexPathForCell:cell];
+        self.selectedItem = [self.items objectAtIndex:IP.row];
+        if (![self.selectedItem isEqual:self.addItem]) {
+            [self.delegateCircleCollectionView showDestructiveAlertVC];
+        }
         //NSLog(@"UIGestureRecognizerStateBegan.");
-        
     }
 }
 
@@ -184,12 +192,11 @@ static NSString *cellId = @"Cell";
     [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     //NSLog(@"item selected index %ld", (long)indexPath.row);
     self.selectedItem = [self.items objectAtIndex:indexPath.row];
-    //if ([self.addItem isEqual:self.selectedItem]) {
-        //[self.delegateCircleCollectionView addItem:collectionView];
-      //  [self.delegateCircleCollectionView collectionView:collectionView didSelectItemAtIndexPath:nil];
-    //} else {
+    if ([self.addItem isEqual:self.selectedItem]) {
+        [self.delegateCircleCollectionView addItem:collectionView];
+    } else {
         [self.delegateCircleCollectionView collectionView:collectionView didSelectItemAtIndexPath:indexPath];
-    //}
+    }
 }
 
 
@@ -197,10 +204,7 @@ static NSString *cellId = @"Cell";
     //locate the scrollview which is in the centre
     CGPoint centerPoint = CGPointMake(self.frame.size.width / 2 + scrollView.contentOffset.x, self.frame.size.height /2 + scrollView.contentOffset.y);
     NSIndexPath *indexPath = [self indexPathForItemAtPoint:centerPoint];
-    //NSLog(@"indexpath row %ld",(long)indexPath.row);
-    //if (!([self.items indexOfObject:self.addItem] == indexPath.row)) {
-        [self.delegate collectionView:self didSelectItemAtIndexPath:indexPath];
-    //}
+    [self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:indexPath];
 }
 
 #pragma mark - UIViewCollectionDelegateFlowLayout

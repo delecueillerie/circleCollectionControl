@@ -15,7 +15,7 @@
 -(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 @optional
 -(void) addItem:(circleCollectionView *)collectionView;
--(void) showAlertVC:(id)sender;
+-(void) showDestructiveAlertVC;
 //-(void) collectionView:(circleCollectionView *)collectionView didLongPressItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -25,6 +25,7 @@
 +(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includeData:(NSArray * )data withAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate;
 -(void)addItemWithName:(NSString *)name picture:(UIImage *)picture color:(UIColor *)color;
 -(void) deleteSelectedItem;
+-(void) longPressOnItem:(UILongPressGestureRecognizer *)sender;
 
 
 @property (weak, nonatomic) id <circleCollectionViewDelegate> delegateCircleCollectionView;

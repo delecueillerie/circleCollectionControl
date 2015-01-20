@@ -34,7 +34,7 @@
     for (UIGestureRecognizer *gReco in self.gestureRecognizers) {
         [self removeGestureRecognizer:gReco];
     }
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:_collectionView.delegateCircleCollectionView action:@selector(showAlertVC:)];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:_collectionView action:@selector(longPressOnItem:)];
     [self addGestureRecognizer:longPress];
 }
 
@@ -59,10 +59,5 @@
     //NSLog(@"cell ratio %f", ratio);
     return (ratio);
 }
-
-- (IBAction)longPress:(id)sender {
-    NSLog(@"long press");
-}
-
 
 @end

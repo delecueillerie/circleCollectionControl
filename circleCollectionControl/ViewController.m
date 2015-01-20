@@ -71,12 +71,13 @@
 
 
 #pragma mark - Trigerred action
--(void) showAlertVC:(UILongPressGestureRecognizer *)sender {
+-(void) showDestructiveAlertVC {
     
     NSString *title = @"Delete player";
     NSString *message = @"The user and the scores will be deleted. This action cannot be undone.";
     NSString *cancelTitle =@"Cancel";
     NSString *destructiveTitle = @"Delete player";
+    //UIAlertController for iOS 8
     if ([UIAlertController class]) {
         
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleActionSheet)];
@@ -92,10 +93,9 @@
             //
         }];
     } else if ([UIActionSheet class]) {
-        
+        //UIAction sheet for previous version of iOS8
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelTitle destructiveButtonTitle:destructiveTitle otherButtonTitles:nil];
         [actionSheet showInView:self.view];
-        NSLog(@"longPress AS");
     }
 }
 

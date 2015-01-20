@@ -25,10 +25,10 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ppn-eI-RRZ">
-                                <rect key="frame" x="225" y="405" width="150" height="150"/>
+                                <rect key="frame" x="250" y="385" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="hWp-gW-IHo"/>
-                                    <constraint firstAttribute="height" constant="150" id="m9l-eY-l94"/>
+                                    <constraint firstAttribute="width" constant="100" id="hWp-gW-IHo"/>
+                                    <constraint firstAttribute="height" constant="100" id="m9l-eY-l94"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -38,7 +38,7 @@
                             <constraint firstAttribute="centerY" secondItem="hNh-Oh-Ust" secondAttribute="centerY" id="KrS-Hp-3GE"/>
                             <constraint firstAttribute="trailing" secondItem="hNh-Oh-Ust" secondAttribute="trailing" id="TOc-ck-op2"/>
                             <constraint firstItem="hNh-Oh-Ust" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lMx-jS-pba"/>
-                            <constraint firstItem="ppn-eI-RRZ" firstAttribute="top" secondItem="hNh-Oh-Ust" secondAttribute="bottom" constant="30" id="pNI-b2-gXg"/>
+                            <constraint firstItem="ppn-eI-RRZ" firstAttribute="top" secondItem="hNh-Oh-Ust" secondAttribute="bottom" constant="10" id="pNI-b2-gXg"/>
                         </constraints>
                     </view>
                     <connections>
