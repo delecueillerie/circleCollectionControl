@@ -21,10 +21,10 @@ Technically this control is a subclass of a UICollectionView with its own constr
 ![Screenshot 2](screenshot2.png)
 
 ### Add item
-![Screenshot 3](screenshot3.png)
+![Screenshot 3](screenshot4.png)
 
 ### R2D2 Item added
-![Screenshot 1](screenshot4.png)
+![Screenshot 1](screenshot3.png)
 
 ## Some Ressources
 
