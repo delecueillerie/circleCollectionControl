@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -28,6 +29,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="Uz9-6C-4ev" firstAttribute="top" secondItem="SHj-08-33P" secondAttribute="bottom" id="5Oe-P5-ymR"/>
                 <constraint firstItem="SHj-08-33P" firstAttribute="leading" secondItem="w7U-dg-bPL" secondAttribute="leading" id="5V2-w1-TPB"/>

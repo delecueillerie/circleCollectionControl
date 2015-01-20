@@ -62,18 +62,17 @@
 #pragma mark - Overriding
 
 - (CGSize)collectionViewContentSize {
-    
     // Ask the data source how many items there are (assume a single section)
     id<UICollectionViewDataSource> dataSource = self.collectionView.dataSource;
     NSInteger numberOfItems = [dataSource collectionView:self.collectionView numberOfItemsInSection:0];
     
     // Determine how many pages are needed
-    int numberOfPages = ceil((float)numberOfItems / 5.0);
+    int numberOfPages = ceil((float)numberOfItems / 3.0);
     
     // Set the size
     float pageWidth = self.collectionView.frame.size.width;
     float pageHeight = self.collectionView.frame.size.height;
-    CGSize contentSize = CGSizeMake((numberOfPages +2)* pageWidth, pageHeight);
+    CGSize contentSize = CGSizeMake((numberOfPages+1)* pageWidth, pageHeight);
 
     return contentSize;
 }
@@ -102,7 +101,7 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Attribute @indexPath %@", [indexPath description]);
+    //NSLog(@"Attribute @indexPath %@", [indexPath description]);
     UICollectionViewLayoutAttributes *attributes = [super layoutAttributesForItemAtIndexPath:indexPath];
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;

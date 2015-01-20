@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "circleCollectionView.h"
 
-@interface ViewController : UIViewController <circleCollectionViewDelegate>
+@interface ViewController : UIViewController <circleCollectionViewDelegate, UIActionSheetDelegate>
 
 
 @end

@@ -7,18 +7,14 @@
 //
 
 #import "ViewController.h"
-//#import "circleCollectionViewCell.h"
-//#import "UIImage+Extended.h"
-
+#import "circleCollectionItemModel.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) NSArray *items;
-
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSArray *jsonArray;
 @property (weak, nonatomic) IBOutlet UIView *collectionViewContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) circleCollectionView *collectionView;
-
 @end
 
 @implementation ViewController
@@ -30,18 +26,28 @@
     NSError *error;
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"objects" ofType:@"json"];
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:NULL];
-    NSLog(@"jsonString:%@",jsonString);
+    //NSLog(@"jsonString:%@",jsonString);
     
-    self.items = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    self.jsonArray = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
     if (error) {
-    NSLog(@"JSON Serialization Error %@", [error description]);
+        NSLog(@"JSON Serialization Error %@", [error description]);
     }
     
-    self.collectionView = [circleCollectionView newCircleCollectionViewWithData:self.items embeddedIn:self.collectionViewContainer delegatedBy:self];
+    self.items = [[NSMutableArray alloc] initWithCapacity:10];
+    for (NSDictionary *dic in self.jsonArray) {
+        [self.items addObject:[circleCollectionItemModel newWithName:[dic valueForKey:@"name"]
+                                                            picture:[UIImage imageNamed:[dic valueForKey:@"picture"]]
+                                                              color:[dic valueForKey:@"color"]]];
+    }
+    
+    self.collectionView = [circleCollectionView newCircleCollectionViewEmbeddedIn:self.collectionViewContainer
+                                                                      includeData:self.items
+                                                               withAddButtonImage:[UIImage imageNamed:@"Add"]
+                                                                      delegatedBy:self];
 }
 
 -(void) viewDidLayoutSubviews {
-    NSLog(@"view frame %f %f %f %f", self.collectionView.frame.origin.x,self.collectionView.frame.origin.y,self.collectionView.frame.size.width,self.collectionView.frame.size.height);
+    //NSLog(@"view frame %f %f %f %f", self.collectionView.frame.origin.x,self.collectionView.frame.origin.y,self.collectionView.frame.size.width,self.collectionView.frame.size.height);
 }
 
 
@@ -50,9 +56,60 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - circleCollectionView Delegate
 
-#pragma mark
--(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.imageView.image = [UIImage imageNamed:[[self.items objectAtIndex:indexPath.row] valueForKey:@"picture"]];
+-(void) addItem:(circleCollectionView *)collectionView {
+    [collectionView addItemWithName:@"newItem" picture:[UIImage imageNamed:@"r2d2"] color:nil];
+}
+
+
+-(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    circleCollectionItemModel *itemSelected = [self.collectionView.items objectAtIndex:indexPath.row];
+    self.imageView.image = itemSelected.picture;
+}
+
+
+
+#pragma mark - Trigerred action
+-(void) showAlertVC:(UILongPressGestureRecognizer *)sender {
+    
+    NSString *title = @"Delete player";
+    NSString *message = @"The user and the scores will be deleted. This action cannot be undone.";
+    NSString *cancelTitle =@"Cancel";
+    NSString *destructiveTitle = @"Delete player";
+    if ([UIAlertController class]) {
+        
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleActionSheet)];
+        
+        [alertC addAction:[UIAlertAction actionWithTitle:destructiveTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [self.collectionView deleteSelectedItem];
+        }]];
+        [alertC addAction:[UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            //NSLog(@"Cancel");
+        }]];
+        
+        [self presentViewController:alertC animated:YES completion:^{
+            //
+        }];
+    } else if ([UIActionSheet class]) {
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:cancelTitle destructiveButtonTitle:destructiveTitle otherButtonTitles:nil];
+        [actionSheet showInView:self.view];
+        NSLog(@"longPress AS");
+    }
+}
+
+#pragma mark - UIActionSheetDelegate
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self.collectionView deleteSelectedItem];
+            break;
+        case 1:
+            //NSLog(@"Cancel");
+            break;
+        default:
+            break;
+    }
 }
 @end
