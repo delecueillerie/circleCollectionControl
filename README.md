@@ -1,6 +1,6 @@
 #circleCollectionControl
 
-This app is an exemple of a collection view with the use of a UICollectionViewFlowLayout subclass.
+This control is a collection view with a UICollectionViewFlowLayout subclass.
 
 * There is a scaling effect on items when scrolling.
 * The centered item is selected automatically when scrolling ending.
@@ -14,8 +14,17 @@ Technically this control is a subclass of a UICollectionView with its own constr
 
 ## Screenshot
 
+### standard
 ![Screenshot 1](screenshot1.png)
 
+### Delete Alert view
+![Screenshot 2](screenshot2.png)
+
+### Add item
+![Screenshot 3](screenshot3.png)
+
+### R2D2 Item added
+![Screenshot 1](screenshot4.png)
 
 ## Some Ressources
 
