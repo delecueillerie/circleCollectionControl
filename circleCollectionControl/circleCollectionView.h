@@ -13,6 +13,8 @@
 @protocol circleCollectionViewDelegate <NSObject>
 
 -(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+-(void) collectionView:(circleCollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
+
 @optional
 -(void) addItem:(circleCollectionView *)collectionView;
 -(void) showDestructiveAlertVC;
@@ -20,7 +22,7 @@
 @end
 
 
-@interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, circleCollectionViewLayoutDelegate>
+@interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 +(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includeData:(NSArray * )data withAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate;
 -(void)addItemWithName:(NSString *)name picture:(UIImage *)picture color:(UIColor *)color;

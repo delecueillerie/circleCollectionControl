@@ -29,6 +29,8 @@
     self.imageView.image = _image;
 }
 
+
+
 -(void) setCollectionView:(circleCollectionView *)collectionView {
     _collectionView = collectionView;
     for (UIGestureRecognizer *gReco in self.gestureRecognizers) {
@@ -59,5 +61,15 @@
     //NSLog(@"cell ratio %f", ratio);
     return (ratio);
 }
+
+-(void) roundedEdge {
+    NSLog(@"Corner Radius %f", self.label.frame.size.width/2.0f);
+    self.label.layer.cornerRadius = 10.0;
+    self.label.clipsToBounds = YES;
+    [self.label.layer setNeedsDisplay];
+    
+    
+}
+
 
 @end

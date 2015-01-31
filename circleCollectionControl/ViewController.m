@@ -68,6 +68,11 @@
     self.imageView.image = itemSelected.picture;
 }
 
+-(void) collectionView:(circleCollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    circleCollectionItemModel *itemSelected = [self.collectionView.items objectAtIndex:indexPath.row];
+    self.imageView.image = itemSelected.picture;
+}
+
 
 
 #pragma mark - Trigerred action

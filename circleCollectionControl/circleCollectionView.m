@@ -159,7 +159,7 @@ static NSString *cellId = @"Cell";
         circleCollectionViewCell *cell = (circleCollectionViewCell *)sender.view;
         NSIndexPath *IP = [self indexPathForCell:cell];
         self.selectedItem = [self.items objectAtIndex:IP.row];
-        if (![self.selectedItem isEqual:self.addItem]) {
+        if ((![self.selectedItem isEqual:self.addItem]) && [self.delegateCircleCollectionView respondsToSelector:@selector(showDestructiveAlertVC)] ) {
             [self.delegateCircleCollectionView showDestructiveAlertVC];
         }
         //NSLog(@"UIGestureRecognizerStateBegan.");
@@ -172,7 +172,6 @@ static NSString *cellId = @"Cell";
     circleCollectionViewCell *cell;
     cell = [cv dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     circleCollectionItemModel *item = [self.items objectAtIndex:indexPath.item];
-
 
     cell.collectionView = self;
     cell.textLabel = item.name ;
@@ -190,15 +189,23 @@ static NSString *cellId = @"Cell";
 
 -(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    UICollectionViewCell *selectedCell = [collectionView.dataSource  collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    if ([selectedCell isKindOfClass:[circleCollectionViewCell class]]) {
+        circleCollectionViewCell *circleCVC = (circleCollectionViewCell *)selectedCell;
+        [circleCVC roundedEdge];
+    }
     //NSLog(@"item selected index %ld", (long)indexPath.row);
     self.selectedItem = [self.items objectAtIndex:indexPath.row];
-    if ([self.addItem isEqual:self.selectedItem]) {
+    if ([self.addItem isEqual:self.selectedItem] && [self.delegateCircleCollectionView respondsToSelector:@selector(addItem:)]) {
         [self.delegateCircleCollectionView addItem:collectionView];
     } else {
         [self.delegateCircleCollectionView collectionView:collectionView didSelectItemAtIndexPath:indexPath];
     }
 }
 
+-(void) collectionView:(circleCollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegateCircleCollectionView collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
+}
 
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     //locate the scrollview which is in the centre

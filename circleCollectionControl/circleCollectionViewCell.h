@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "circleImageView.h"
 #import "circleCollectionView.h"
 
 @interface circleCollectionViewCell : UICollectionViewCell
@@ -16,6 +15,9 @@
 @property (strong, nonatomic) NSString *textLabel;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) UIColor *borderColor;
+
+
+-(void) roundedEdge;
 
 +(float) nativeRatioHeightWidth;
 @end
