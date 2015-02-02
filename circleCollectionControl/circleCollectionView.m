@@ -15,6 +15,11 @@
 @property(strong, nonatomic) UIImage *addButtonImage;
 @property (strong, nonatomic) circleCollectionItemModel *addItem;
 @property (strong, nonatomic) circleCollectionItemModel *selectedItem;
+
+
+
+@property (strong, nonatomic) circleCollectionViewLayout *circleLayout;
+
 @end
 
 
@@ -57,9 +62,9 @@ static NSString *cellId = @"Cell";
 
 +(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includeData:(NSArray * )data withAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate {
 
-    
     circleCollectionViewLayout *circleLayout = [[circleCollectionViewLayout alloc] init];
     circleCollectionView * collectionView = [[circleCollectionView alloc] initWithFrame:viewContainer.frame collectionViewLayout:circleLayout];
+    collectionView.circleLayout = circleLayout;
     [collectionView.items addObjectsFromArray:data];
     collectionView.addButtonImage = addButtonImage;
     [viewContainer addSubview:collectionView];
@@ -191,8 +196,14 @@ static NSString *cellId = @"Cell";
 -(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     //UICollectionViewCell *selectedCell = [collectionView.dataSource  collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    self.circleLayout.transparency = YES;
     
     //NSLog(@"item selected index %ld", (long)indexPath.row);
+    
+    
+    
+    
+    
     self.selectedItem = [self.items objectAtIndex:indexPath.row];
     if ([self.addItem isEqual:self.selectedItem] && [self.delegateCircleCollectionView respondsToSelector:@selector(addItem:)]) {
         [self.delegateCircleCollectionView addItem:collectionView];
@@ -202,6 +213,9 @@ static NSString *cellId = @"Cell";
 }
 
 -(void) collectionView:(circleCollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.circleLayout.transparency = NO;
+
     [self.delegateCircleCollectionView collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
 }
 
@@ -209,8 +223,15 @@ static NSString *cellId = @"Cell";
     //locate the scrollview which is in the centre
     CGPoint centerPoint = CGPointMake(self.frame.size.width / 2 + scrollView.contentOffset.x, self.frame.size.height /2 + scrollView.contentOffset.y);
     NSIndexPath *indexPath = [self indexPathForItemAtPoint:centerPoint];
+    
     [self selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-    [self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:indexPath];
+    [self.delegate collectionView:self didSelectItemAtIndexPath:indexPath];
+    //[self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:indexPath];
+}
+
+-(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.delegate collectionView:self didDeselectItemAtIndexPath:[[self indexPathsForSelectedItems] firstObject]];
+    
 }
 
 #pragma mark - UIViewCollectionDelegateFlowLayout

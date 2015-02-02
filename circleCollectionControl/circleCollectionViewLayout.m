@@ -19,10 +19,23 @@
 
 @implementation circleCollectionViewLayout
 
+
+#pragma mark - accessor
+
+-(void) setTransparency:(BOOL)transparency {
+    _transparency = transparency;
+    [self invalidateLayout];
+}
+
+
+
+
+#pragma mark - initializer
 -(instancetype) init {
     self = [super init];
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        self.transparency = NO;
     }
     return self;
 }
@@ -34,6 +47,13 @@
     
     CGFloat distance = (CGRectGetMidX(visibleRect) - attributes.center.x);
     CGFloat normalizedDistance = ABS(distance) / (visibleRect.size.width/2.0);
+    
+    //transparency
+    if (normalizedDistance>0.1 && self.transparency) {
+        attributes.alpha = 0.2;
+    }
+    
+    //zoom
     CGFloat zoom = 1 - 0.8*normalizedDistance;
     attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);
 }
@@ -48,12 +68,11 @@
     NSArray* array = [super layoutAttributesForElementsInRect:targetRect];
     
     for (UICollectionViewLayoutAttributes* layoutAttributes in array) {
-        if (layoutAttributes.representedElementCategory != UICollectionElementCategoryCell)
-            continue; // skip headers
-        
-        CGFloat itemHorizontalCenter = layoutAttributes.center.x;
-        if (ABS(itemHorizontalCenter - horizontalCenter) < ABS(offsetAdjustment)) {
+        if (layoutAttributes.representedElementCategory == UICollectionElementCategoryCell) {
+            CGFloat itemHorizontalCenter = layoutAttributes.center.x;
+            if (ABS(itemHorizontalCenter - horizontalCenter) < ABS(offsetAdjustment)) {
             offsetAdjustment = itemHorizontalCenter - horizontalCenter;
+            }
         }
     }
     return CGPointMake(proposedContentOffset.x + offsetAdjustment, proposedContentOffset.y);

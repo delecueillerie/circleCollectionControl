@@ -11,4 +11,6 @@
 
 @interface circleCollectionViewLayout : UICollectionViewFlowLayout
 
+@property (nonatomic) BOOL transparency;
+
 @end
