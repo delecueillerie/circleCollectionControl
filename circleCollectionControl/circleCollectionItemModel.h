@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 @interface circleCollectionItemModel : NSObject
 
+
+
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) UIImage *picture;
 @property (strong, nonatomic) UIColor *color;

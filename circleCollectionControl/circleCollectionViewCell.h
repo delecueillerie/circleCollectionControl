@@ -11,10 +11,14 @@
 
 @interface circleCollectionViewCell : UICollectionViewCell
 
+
+
+
+
 @property (weak, nonatomic) circleCollectionView *collectionView;
 @property (strong, nonatomic) NSString *textLabel;
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) UIColor *borderColor;
+@property (strong ,nonatomic) UIColor *borderColor;
 
 
 -(void) roundedEdge;

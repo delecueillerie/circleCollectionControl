@@ -73,4 +73,20 @@
     return roundedImage;
 }
 
+
+- (UIImage *)imageWithBorderWidth:(float)lineWidth red:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
+    CGSize size = [self size];
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0+lineWidth/2, 0+lineWidth/2, size.width-lineWidth, size.height-lineWidth);
+    [self drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, red, green, blue, alpha);
+    CGContextSetLineWidth(context, lineWidth);
+    CGContextStrokeEllipseInRect(context, rect);
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return testImg;
+}
+
 @end

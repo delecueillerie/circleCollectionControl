@@ -15,7 +15,12 @@
     circleCollectionItemModel *newItem = [[circleCollectionItemModel alloc] init];
     newItem.name = name;
     newItem.picture = picture;
-    newItem.color = color;
+    if (color) {
+        newItem.color = color;
+    } else {
+        newItem.color = [UIColor blackColor];
+    }
+
     
     return newItem;
 }

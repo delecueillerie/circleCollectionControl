@@ -177,6 +177,7 @@ static NSString *cellId = @"Cell";
     cell.textLabel = item.name ;
     cell.image = item.picture;
     cell.borderColor = item.color;
+    
     return cell;
 }
 
@@ -189,11 +190,8 @@ static NSString *cellId = @"Cell";
 
 -(void) collectionView:(circleCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-    UICollectionViewCell *selectedCell = [collectionView.dataSource  collectionView:collectionView cellForItemAtIndexPath:indexPath];
-    if ([selectedCell isKindOfClass:[circleCollectionViewCell class]]) {
-        circleCollectionViewCell *circleCVC = (circleCollectionViewCell *)selectedCell;
-        [circleCVC roundedEdge];
-    }
+    //UICollectionViewCell *selectedCell = [collectionView.dataSource  collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    
     //NSLog(@"item selected index %ld", (long)indexPath.row);
     self.selectedItem = [self.items objectAtIndex:indexPath.row];
     if ([self.addItem isEqual:self.selectedItem] && [self.delegateCircleCollectionView respondsToSelector:@selector(addItem:)]) {
@@ -211,6 +209,7 @@ static NSString *cellId = @"Cell";
     //locate the scrollview which is in the centre
     CGPoint centerPoint = CGPointMake(self.frame.size.width / 2 + scrollView.contentOffset.x, self.frame.size.height /2 + scrollView.contentOffset.y);
     NSIndexPath *indexPath = [self indexPathForItemAtPoint:centerPoint];
+    [self selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     [self.delegateCircleCollectionView collectionView:self didSelectItemAtIndexPath:indexPath];
 }
 

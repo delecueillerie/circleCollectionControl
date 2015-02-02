@@ -13,11 +13,30 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+
+@property (strong, nonatomic) UIImage *imageSelected;
+
 @end
 
 @implementation circleCollectionViewCell
 
+@synthesize selected = _selected;
 #pragma mark - Accessors
+
+
+
+-(UIImage *) imageSelected {
+    if (!_imageSelected) {
+        if (self.borderColor) {
+            CGFloat red, green, blue, alpha;
+            [self.borderColor getRed:&red green:&green blue:&blue alpha:&alpha];
+            _imageSelected = [self.image imageWithBorderWidth:25.0f red:red green:green blue:blue alpha:alpha];
+        } else {
+            _imageSelected = self.image;
+        }
+    }
+    return _imageSelected;
+}
 
 -(void) setTextLabel:(NSString *)textLabel {
     _textLabel = textLabel;
@@ -26,11 +45,19 @@
 
 -(void) setImage:(UIImage *)image {
     _image = [image rounded];
+    self.imageSelected = nil;
     self.imageView.image = _image;
+
 }
 
-
-
+-(void) setSelected:(BOOL)selectedValue {
+    _selected = selectedValue;
+    if (_selected) {
+        self.imageView.image = self.imageSelected;
+    } else {
+        self.imageView.image = self.image;
+    }
+}
 -(void) setCollectionView:(circleCollectionView *)collectionView {
     _collectionView = collectionView;
     for (UIGestureRecognizer *gReco in self.gestureRecognizers) {
@@ -39,6 +66,7 @@
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:_collectionView action:@selector(longPressOnItem:)];
     [self addGestureRecognizer:longPress];
 }
+
 
 
 
@@ -63,11 +91,14 @@
 }
 
 -(void) roundedEdge {
-    NSLog(@"Corner Radius %f", self.label.frame.size.width/2.0f);
-    self.label.layer.cornerRadius = 10.0;
-    self.label.clipsToBounds = YES;
-    [self.label.layer setNeedsDisplay];
+   // NSLog(@"Corner Radius %f", self.label.frame.size.width/2.0f);
+    self.imageView.layer.cornerRadius = 10.0;
+    self.imageView.clipsToBounds = YES;
+    self.imageView.layer.masksToBounds = YES;
+    [self.imageView.layer setNeedsDisplay];
     
+    self.contentView.layer.cornerRadius = 5.0;
+    self.contentView.clipsToBounds = YES;
     
 }
 

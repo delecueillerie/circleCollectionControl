@@ -11,5 +11,5 @@
 @interface UIImage (Extended)
 - (UIImage *)squareImageScaledToSize:(CGFloat)newSize;
 - (UIImage *)rounded;
-
+- (UIImage *)imageWithBorderWidth:(float)lineWidth red:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
 @end

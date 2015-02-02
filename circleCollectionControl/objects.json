@@ -2,61 +2,61 @@
  {
  "name": "Anchor",
  "picture": "Anchor",
- "color": [188,187,187]
+ "RGBA": [188.0,187.0,187.0,1.0]
  },
  {
  "name": "Bike",
  "picture": "Bike",
- "color": [132,75,71]
+ "RGBA": [132.0,75.0,71.0,1.0]
  },
  {
  "name": "Cherries",
  "picture": "Cherries",
- "color": [186,7,69]
+ "RGBA": [186.0,7.0,69.0,1.0]
  },
  {
  "name": "Compass",
  "picture": "Compass",
- "color": [214,159,70]
+ "RGBA": [214.0,159.0,70.0,1.0]
  },
  {
  "name": "Crown",
  "picture": "Crown",
- "color": [229,205,85]
+ "RGBA": [229.0,205.0,85.0,1.0]
  },
  {
  "name": "Globe",
  "picture": "Globe",
- "color": [29,120,166]
+ "RGBA": [29.0,120.0,166.0,1.0]
  },
  {
  "name": "Headphones",
  "picture": "Headphones",
- "color": [201,200,200]
+ "RGBA": [201.0,200.0,200.0,1.0]
  },
  {
  "name": "Lightbulb",
  "picture": "Lightbulb",
- "color": [254,254,200]
+ "RGBA": [254.0,254.0,200.0,1.0]
  },
  {
  "name": "Pencil",
  "picture": "Pencil",
- "color": [229,205,85]
+ "RGBA": [229.0,205.0,85.0,1.0]
  },
  {
  "name": "Plane",
  "picture": "Plane",
- "color": [149,23,30]
+ "RGBA": [149.0,23.0,30.0,1.0]
  },
  {
  "name": "Watch",
  "picture": "Watch",
- "color": [94,134,155]
+ "RGBA": [94.0,134.0,155.0,1.0]
  },
  {
  "name": "Yacht",
  "picture": "Yacht",
- "color": [240,236,208]
+ "RGBA": [240.0,236.0,208.0,1.0]
  }
  ]

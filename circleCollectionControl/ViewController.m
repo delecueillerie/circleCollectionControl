@@ -9,16 +9,29 @@
 #import "ViewController.h"
 #import "circleCollectionItemModel.h"
 
+
+#import "UIImage+Extended.h"
+
+
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) NSArray *jsonArray;
 @property (weak, nonatomic) IBOutlet UIView *collectionViewContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) circleCollectionView *collectionView;
+
+
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *borderIV;
+
+
 @end
 
 @implementation ViewController
 
+
+#pragma mark - VC Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -35,15 +48,25 @@
     
     self.items = [[NSMutableArray alloc] initWithCapacity:10];
     for (NSDictionary *dic in self.jsonArray) {
+        NSArray *RGBA = [dic valueForKey:@"RGBA"];
+        CGFloat red = [(NSNumber *)RGBA[0] floatValue]/255;
+        CGFloat green = [(NSNumber *)RGBA[1] floatValue]/255;
+        CGFloat blue = [(NSNumber *)RGBA[2] floatValue]/255;
+        CGFloat alpha = [(NSNumber *)RGBA[3] floatValue];
+        
+        UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        
         [self.items addObject:[circleCollectionItemModel newWithName:[dic valueForKey:@"name"]
                                                             picture:[UIImage imageNamed:[dic valueForKey:@"picture"]]
-                                                              color:[dic valueForKey:@"color"]]];
+                                                              color:color]];
     }
     
     self.collectionView = [circleCollectionView newCircleCollectionViewEmbeddedIn:self.collectionViewContainer
                                                                       includeData:self.items
                                                                withAddButtonImage:[UIImage imageNamed:@"Add"]
                                                                       delegatedBy:self];
+    
+    
 }
 
 -(void) viewDidLayoutSubviews {
