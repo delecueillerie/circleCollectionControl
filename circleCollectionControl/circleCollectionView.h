@@ -30,6 +30,8 @@
 -(void) longPressOnItem:(UILongPressGestureRecognizer *)sender;
 
 
+-(UIImage *) selectedUserIcon;
+
 @property (weak, nonatomic) id <circleCollectionViewDelegate> delegateCircleCollectionView;
 @property (strong, nonatomic) NSMutableArray *items;
 @end

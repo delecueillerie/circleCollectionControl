@@ -10,6 +10,8 @@
 #import "circleCollectionViewCell.h"
 #import "circleCollectionItemModel.h"
 
+#import "UIImage+Extended.h"
+
 @interface circleCollectionView ()
 
 @property(strong, nonatomic) UIImage *addButtonImage;
@@ -273,5 +275,11 @@ static NSString *cellId = @"Cell";
     // Drawing code
 }
 */
+
+#pragma mark - 
+-(UIImage *) selectedUserIcon {
+    //return [[self.selectedItem.picture squareImageScaledToSize:22.0f] rounded];
+    return [self.selectedItem.picture iconForNavBarItem];
+}
 
 @end

@@ -14,7 +14,6 @@
 - (UIImage *)squareImageScaledToSize:(CGFloat)newSize {
     CGAffineTransform scaleTransform;
     CGPoint origin;
-    
     if (self.size.width > self.size.height) {
         CGFloat scaleRatio = newSize / self.size.height;
         scaleTransform = CGAffineTransformMakeScale(scaleRatio, scaleRatio);
@@ -36,11 +35,9 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextConcatCTM(context, scaleTransform);
-    UIImage *image = [UIImage new];
-    [image drawAtPoint:origin];
+    [self drawAtPoint:origin];
     
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return image;
@@ -73,6 +70,26 @@
     return roundedImage;
 }
 
+
+- (UIImage *) iconForNavBarItem {
+    
+    float width = 44.0f;
+    float inset = 5.0f;
+    UIImage *squared = [self squareImageScaledToSize:width];
+    UIImage *rounded = [squared rounded];
+    
+    CGSize size = CGSizeMake(width+inset, width+2*inset);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1);
+    [rounded drawAtPoint:CGPointMake(0, inset)];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(inset, 0, inset, inset)];
+    
+    return image;
+}
 
 - (UIImage *)imageWithBorderWidth:(float)lineWidth red:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     CGSize size = [self size];
