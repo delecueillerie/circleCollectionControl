@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093B34351A83D53C004D27C6 /* circleCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093B34341A83D53C004D27C6 /* circleCollectionView.xib */; };
 		096034E01A57EC26007DE586 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = 096034DF1A57EC26007DE586 /* objects.json */; };
 		096034E21A57FF31007DE586 /* circleCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096034E11A57FF31007DE586 /* circleCellView.xib */; };
 		096034E51A5830E9007DE586 /* circleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		093B34341A83D53C004D27C6 /* circleCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleCollectionView.xib; sourceTree = "<group>"; };
 		096034DF1A57EC26007DE586 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
 		096034E11A57FF31007DE586 /* circleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circleCellView.xib; sourceTree = "<group>"; };
 		096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleCollectionViewLayout.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				096034E31A5830E9007DE586 /* circleCollectionViewLayout.h */,
 				096034E41A5830E9007DE586 /* circleCollectionViewLayout.m */,
 				096034E11A57FF31007DE586 /* circleCellView.xib */,
+				093B34341A83D53C004D27C6 /* circleCollectionView.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093B34351A83D53C004D27C6 /* circleCollectionView.xib in Resources */,
 				096034E01A57EC26007DE586 /* objects.json in Resources */,
 				096034E21A57FF31007DE586 /* circleCellView.xib in Resources */,
 				09F439C31A570453005D8C4D /* circleCollectionControl.storyboard in Resources */,

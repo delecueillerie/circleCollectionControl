@@ -24,13 +24,15 @@
 
 @interface circleCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-+(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includeData:(NSArray * )data withAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate;
++(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includedData:(NSArray * )data withOptionalAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate isAllowingMultiSelection:(BOOL) isAllowingMultiSelection;
 -(void)addItemWithName:(NSString *)name picture:(UIImage *)picture color:(UIColor *)color;
 -(void) deleteSelectedItem;
 -(void) longPressOnItem:(UILongPressGestureRecognizer *)sender;
 
 
--(UIImage *) selectedUserIcon;
+-(UIImage *) selectedImageIcon;
+-(NSArray *) selectedItems;
+
 
 @property (weak, nonatomic) id <circleCollectionViewDelegate> delegateCircleCollectionView;
 @property (strong, nonatomic) NSMutableArray *items;

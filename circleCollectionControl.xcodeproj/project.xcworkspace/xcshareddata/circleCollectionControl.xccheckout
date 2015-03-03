@@ -12,6 +12,8 @@
 	<dict>
 		<key>812D47828D6E0CF8819749F6E206A6F9DAA30481</key>
 		<string>https://github.com/delecueillerie/circleCollectionControl.git</string>
+		<key>98C188EF814A6FD2F38B3D49B8976C1AF50AACBB</key>
+		<string>https://github.com/henrytkirk/HTKDragAndDropCollectionViewLayout.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>circleCollectionControl.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>812D47828D6E0CF8819749F6E206A6F9DAA30481</key>
 		<string>../..</string>
+		<key>98C188EF814A6FD2F38B3D49B8976C1AF50AACBB</key>
+		<string>../../../HTKDragAndDropCollectionViewLayout</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/delecueillerie/circleCollectionControl.git</string>
@@ -35,6 +39,14 @@
 			<string>812D47828D6E0CF8819749F6E206A6F9DAA30481</string>
 			<key>IDESourceControlWCCName</key>
 			<string>circleCollectionControl</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>98C188EF814A6FD2F38B3D49B8976C1AF50AACBB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HTKDragAndDropCollectionViewLayout</string>
 		</dict>
 	</array>
 </dict>

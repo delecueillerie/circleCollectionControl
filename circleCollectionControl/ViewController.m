@@ -20,10 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) circleCollectionView *collectionView;
 
-
-
-
-@property (weak, nonatomic) IBOutlet UIImageView *borderIV;
+//@property (weak, nonatomic) IBOutlet UIImageView *borderIV;
 
 
 @end
@@ -62,9 +59,10 @@
     }
     
     self.collectionView = [circleCollectionView newCircleCollectionViewEmbeddedIn:self.collectionViewContainer
-                                                                      includeData:self.items
-                                                               withAddButtonImage:[UIImage imageNamed:@"Add"]
-                                                                      delegatedBy:self];
+                                                                      includedData:self.items
+                                                               withOptionalAddButtonImage:[UIImage imageNamed:@"Add"]
+                                                                      delegatedBy:self
+                                                         isAllowingMultiSelection:YES];
     
     
 }
@@ -97,7 +95,24 @@
 }
 
 
+#pragma mark - UICollectionViewDatasource
 
+
+
+
+#pragma mark - UICollectionViewDelegate
+
+-(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[self.collectionView selectedItems] count];
+}
+
+-(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [[UICollectionViewCell alloc]init];
+}
 #pragma mark - Trigerred action
 -(void) showDestructiveAlertVC {
     

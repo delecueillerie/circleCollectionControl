@@ -62,7 +62,7 @@ static NSString *cellId = @"Cell";
 
 #pragma mark - Initializer
 
-+(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includeData:(NSArray * )data withAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate {
++(circleCollectionView *) newCircleCollectionViewEmbeddedIn:(UIView *)viewContainer includedData:(NSArray * )data withOptionalAddButtonImage:(UIImage *)addButtonImage delegatedBy:(id)delegate isAllowingMultiSelection:(BOOL)isALlowingMultiSelection {
 
     circleCollectionViewLayout *circleLayout = [[circleCollectionViewLayout alloc] init];
     circleCollectionView * collectionView = [[circleCollectionView alloc] initWithFrame:viewContainer.frame collectionViewLayout:circleLayout];
